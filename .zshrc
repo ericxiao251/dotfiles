@@ -81,23 +81,20 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# # Setting PATH for Python 2.7
-# PATH="usr/local/Cellar/python/2.7.13/bin:${PATH}"
-# export PATH
-#
-# # Setting PATH for Python 3.6
-# PATH="usr/local/Cellar/python3/3.6.1/bin:${PATH}"
-# export PATH
-
-# Setting PATH for Python 2.7
+# paths for Python
 # The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
+export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
 
-# Setting PATH for Python 3.6
-# The original version is saved in .zprofile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-export PATH
+# python virtualenv
+export WORKON_HOME=$HOME/.virtualenvs   # optional
+export PROJECT_HOME=$HOME/projects      # optional
+source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
+
+# node and web stuff
+export PATH=$PATH:./node_modules/.bin
+export PATH=$HOME/mongodb/bin:$PATH
+export PATH=/usr/local/mysql/bin:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/ericxiao/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ericxiao/google-cloud-sdk/path.zsh.inc'; fi
@@ -107,10 +104,3 @@ if [ -f '/Users/ericxiao/google-cloud-sdk/completion.zsh.inc' ]; then source '/U
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
-# Adding ./node_modules/.bin to relative path
-export PATH=$PATH:./node_modules/.bin
-
-export WORKON_HOME=$HOME/.virtualenvs   # optional
-export PROJECT_HOME=$HOME/projects      # optional
-source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
