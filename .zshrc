@@ -1,10 +1,35 @@
+# If you come from bash you might have to change your $PATH.
+# export PATH=$HOME/bin:/usr/local/bin:$PATH
+unsetopt nomatch
+
+export PATH="$HOME/.jenv/shims:$PATH"
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
+export PATH=/Users/ericxiao/scala/bin:$PATH
+
+# Syntax highlighting and autocomplete
+[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+source /Users/ericxiao/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+antigen bundle zsh-users/zsh-autosuggestions
+plugins=(zsh-autosuggestions)
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/ericxiao/.oh-my-zsh
+export ZSH="/Users/ericxiao/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="amuse"
+
+# Set list of themes to load
+# Setting this variable when ZSH_THEME=random
+# cause zsh load theme from this variable instead of
+# looking in ~/.oh-my-zsh/themes/
+# An empty array have no effect
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -48,7 +73,11 @@ ZSH_THEME="amuse"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,6 +98,9 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
+# ssh
+# export SSH_KEY_PATH="~/.ssh/rsa_id"
+
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -77,44 +109,3 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# ssh
-export SSH_KEY_PATH="/Users/ericxiao/.ssh/id_rsa"
-
-# OpenMP for OSX
-export PATH="usr/local/opt/llvm/bin:$PATH"
-export LD_LIBRARY_PATH="/usr/local/opt/llvm/lib:$LD_LIBRARY_PATH"
-export LIBRARY_PATH="/usr/local/opt/llvm/lib:$LIBRARY_PATH"
-
-# paths for anaconda
-export PATH="/Users/ericxiao/anaconda3/bin:$PATH"
-
-# paths for Python
-# The original version is saved in .zprofile.pysave
-# export PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-# export PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
-
-# # # python virtualenv
-# export WORKON_HOME=$HOME/.virtualenvs   # optional
-# export PROJECT_HOME=$HOME/projects      # optional
-# source /Library/Frameworks/Python.framework/Versions/2.7/bin/virtualenvwrapper.sh
-# #
-# # python virtualenv
-# export WORKON_HOME=$HOME/.virtualenvs   # optional
-# export PROJECT_HOME=$HOME/projects      # optional
-# source /Library/Frameworks/Python.framework/Versions/3.6/bin/virtualenvwrapper.sh
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/ericxiao/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/ericxiao/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/ericxiao/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/ericxiao/google-cloud-sdk/completion.zsh.inc'; fi
-
-# node and web stuff
-export PATH=$PATH:./node_modules/.bin
-export PATH=$HOME/mongodb/bin:$PATH
-export PATH=/usr/local/mysql/bin:$PATH
-
-# IDK
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
