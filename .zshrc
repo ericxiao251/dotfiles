@@ -24,6 +24,12 @@ export ZSH="/Users/ericxiao/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="amuse"
 
+################# Keyboard shortcuts #################
+# Set alt + arrow keys to move to next/previous word.
+# the characters may vary by machine.
+bindkey "[D" backward-word
+bindkey "[C" forward-word
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
