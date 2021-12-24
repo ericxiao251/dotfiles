@@ -30,6 +30,10 @@ ZSH_THEME="amuse"
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
+
+# Set cmd + arrow keys to move to start/end of line.
+# https://stackoverflow.com/questions/6205157/how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
+
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
 # cause zsh load theme from this variable instead of
