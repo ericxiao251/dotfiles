@@ -7,11 +7,9 @@ export JAVA_HOME=`/usr/libexec/java_home -v 1.8`
 export PATH=/Users/ericxiao/scala/bin:$PATH
 
 # Syntax highlighting and autocomplete
+# https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 source /Users/ericxiao/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-antigen bundle zsh-users/zsh-autosuggestions
-plugins=(zsh-autosuggestions)
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
@@ -33,13 +31,14 @@ ZSH_THEME="amuse"
 
 ################# Keyboard shortcuts #################
 # Set alt + arrow keys to move to next/previous word.
-# the characters may vary by machine.
+# source: https://coderwall.com/p/a8uxma/zsh-iterm2-osx-shortcuts
 bindkey "[D" backward-word
 bindkey "[C" forward-word
 
-
 # Set cmd + arrow keys to move to start/end of line.
-# https://stackoverflow.com/questions/6205157/how-to-set-keyboard-shortcuts-to-jump-to-beginning-end-of-line
+# source: https://coderwall.com/p/a8uxma/zsh-iterm2-osx-shortcuts
+bindkey "^[a" beginning-of-line
+bindkey "^[e" end-of-line
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -126,3 +125,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+[[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
+
+[[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
+source /Users/ericxiao/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
