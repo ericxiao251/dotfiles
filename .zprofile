@@ -21,4 +21,6 @@ alias gr='git rebase'
 alias grc='git rebase --continue'
 alias grc='git rebase --abort'
 
+alias k='kubectl'							# kubectl shortcut
+
 source /usr/local/bin/virtualenvwrapper.sh
