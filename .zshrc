@@ -9,13 +9,13 @@ export PATH=/Users/ericxiao/scala/bin:$PATH
 # Syntax highlighting and autocomplete
 # https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-source /Users/ericxiao/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ff00ff,bg=cyan,bold,underline"
 ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/ericxiao/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Path for python3 from homebrew
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
@@ -129,4 +129,4 @@ source $ZSH/oh-my-zsh.sh
 [[ -f /opt/dev/sh/chruby/chruby.sh ]] && type chruby >/dev/null 2>&1 || chruby () { source /opt/dev/sh/chruby/chruby.sh; chruby "$@"; }
 
 [[ -x /opt/homebrew/bin/brew ]] && eval $(/opt/homebrew/bin/brew shellenv)
-source /Users/ericxiao/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
